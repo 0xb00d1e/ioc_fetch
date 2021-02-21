@@ -23,3 +23,4 @@ ROLE_NOT_FOUND = (404, 'role not found')
 ERROR_ROLE_NOT_FOUND = (400, 'role not found')
 
 INVALID_IPV4_SENT = (400, 'invalid ipv4 was sent to the server')
+INVALID_DOMAIN_SENT = (400, 'invalid domain was sent to the server')

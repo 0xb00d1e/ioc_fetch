@@ -15,3 +15,10 @@ class VT(Source):
             headers={'x-apikey': self.api_key}
         )
         return response
+
+    def check_domain(self, domain):
+        response = requests.get(
+            f'{self.url}/domains/{domain}',
+            headers={'x-apikey': self.api_key}
+        )
+        return response
