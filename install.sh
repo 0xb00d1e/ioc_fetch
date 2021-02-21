@@ -28,3 +28,10 @@ sudo -i -u postgres psql -c "create user ioc_fetch_dev with encrypted password '
 sudo -i -u postgres psql -c "grant all privileges on database ioc_fetch to ioc_fetch;"
 sudo -i -u postgres psql -c "grant all privileges on database ioc_fetch_test to ioc_fetch_test;"
 sudo -i -u postgres psql -c "grant all privileges on database ioc_fetch_dev to ioc_fetch_dev;"
+
+cp -r ../ioc_fetch/ /home/ioc_fetch/ioc_fetch/
+chown -R ioc_fetch:ioc_fetch /home/ioc_fetch/ioc_fetch/
+cp site_conf/ioc_fetch.conf /etc/apache2/sites-available/ioc_fetch.conf
+a2ensite ioc_fetch.conf
+service apache2 restart
+sudo -i -u ioc_fetch virtualenv -p python3 /home/ioc_fetch/ioc_fetch/venv/
