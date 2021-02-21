@@ -33,5 +33,13 @@ cp -r ../ioc_fetch/ /home/ioc_fetch/ioc_fetch/
 chown -R ioc_fetch:ioc_fetch /home/ioc_fetch/ioc_fetch/
 cp site_conf/ioc_fetch.conf /etc/apache2/sites-available/ioc_fetch.conf
 a2ensite ioc_fetch.conf
+a2dissite 000-default.conf
+
+echo '<Directory /home/ioc_fetch/ioc_fetch/>' >> /etc/apache2/apache2.conf
+echo '    Options Indexes FollowSymLinks' >> /etc/apache2/apache2.conf
+echo '    AllowOverride None' >> /etc/apache2/apache2.conf
+echo '    Require all granted' >> /etc/apache2/apache2.conf
+echo '</Directory>' >> /etc/apache2/apache2.conf
+
 service apache2 restart
 sudo -i -u ioc_fetch virtualenv -p python3 /home/ioc_fetch/ioc_fetch/venv/
