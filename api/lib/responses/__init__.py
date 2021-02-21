@@ -24,3 +24,6 @@ ERROR_ROLE_NOT_FOUND = (400, 'role not found')
 
 INVALID_IPV4_SENT = (400, 'invalid ipv4 was sent to the server')
 INVALID_DOMAIN_SENT = (400, 'invalid domain was sent to the server')
+INVALID_MD5_SENT = (400, 'invalid md5 was sent to the server')
+INVALID_SHA1_SENT = (400, 'invalid sha1 was sent to the server')
+INVALID_SHA256_SENT = (400, 'invalid sha256 was sent to the server')

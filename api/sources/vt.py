@@ -22,3 +22,24 @@ class VT(Source):
             headers={'x-apikey': self.api_key}
         )
         return response
+
+    def check_md5(self, md5):
+        response = requests.get(
+            f'{self.url}/files/{md5}',
+            headers={'x-apikey': self.api_key}
+        )
+        return response
+
+    def check_sha1(self, sha1):
+        response = requests.get(
+            f'{self.url}/files/{sha1}',
+            headers={'x-apikey': self.api_key}
+        )
+        return response
+
+    def check_sha256(self, sha256):
+        response = requests.get(
+            f'{self.url}/files/{sha256}',
+            headers={'x-apikey': self.api_key}
+        )
+        return response
