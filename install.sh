@@ -17,6 +17,8 @@ apt install -y python3-dev
 apt install -y build-essential
 apt install -y linux-headers-$(uname -r)
 
+adduser --quiet --disabled-password --shell /bin/bash --home /home/ioc_fetch --gecos "User" ioc_fetch
+
 sudo -i -u postgres psql -c "create database ioc_fetch;"
 sudo -i -u postgres psql -c "create database ioc_fetch_test;"
 sudo -i -u postgres psql -c "create database ioc_fetch_dev;"
