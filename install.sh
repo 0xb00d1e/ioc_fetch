@@ -43,3 +43,9 @@ echo '</Directory>' >> /etc/apache2/apache2.conf
 
 service apache2 restart
 sudo -i -u ioc_fetch virtualenv -p python3 /home/ioc_fetch/ioc_fetch/venv/
+
+usermod -aG www-data ioc_fetch
+cd /home/ioc_fetch/ioc_fetch/
+chmod g+s logs/
+setfacl -d -m o::rw logs/
+chmod 777 logs/
